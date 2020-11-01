@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { OfertasService } from '../ofertas.services'
 import { Oferta } from '../shared/oferta.model'
+
 
 @Component({
   selector: 'app-oferta',
@@ -9,8 +10,8 @@ import { Oferta } from '../shared/oferta.model'
   styleUrls: ['./oferta.component.css'],
   providers: [OfertasService]
 })
-export class OfertaComponent implements OnInit {
-
+export class OfertaComponent implements OnInit, OnDestroy {
+ 
   public oferta: Oferta
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,11 @@ export class OfertaComponent implements OnInit {
       .then((oferta: Oferta) => {
         this.oferta = oferta
       })
+
+    
+  }
+  ngOnDestroy(){
+   
   }
 
 }
