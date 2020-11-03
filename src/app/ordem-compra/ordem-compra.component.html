@@ -73,10 +73,12 @@
             class="form-control is-invalid" 
             placeholder="Endereço" 
             autocomplete="off" 
-            minlength="5" 
+            minlength="3" 
+            maxlength="120"
             required
             name="endereco"
             ngModel
+            required
           >
           <small class="form-text text-danger">Endereço inválido</small>
         </div>
@@ -88,6 +90,7 @@
             placeholder="Número" 
             autocomplete="off" 
             minlength="1"
+            maxlength="20"
             required
             name="numero"
             ngModel
@@ -119,6 +122,7 @@
             class="form-control is-invalid"
             name="formaPagamento"
             ngModel
+            required
           >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
