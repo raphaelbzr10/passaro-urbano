@@ -1,5 +1,9 @@
 <div class="container">
   <div class="ordem-compra">
+    <!-- 
+      ngForm -> Associa ao formulário
+      ngModel -> Associa aos campos do formulário
+     -->
     <form novalidate #formulario="ngForm" (ngSubmit)="confirmarCompra()">
     
       <h5>Sua Compra</h5>
@@ -62,6 +66,9 @@
       </div>
       <br />
 
+      <pre>Válido = {{formulario.valid | json}}</pre>
+      <pre>Inválido = {{formulario.invalid | json}}</pre>
+      <pre>{{formulario.value | json}}</pre>
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -70,15 +77,14 @@
         <div class="form-group col-md-6">
           <input 
             type="text" 
-            class="form-control is-invalid" 
+            class="form-control" 
             placeholder="Endereço" 
             autocomplete="off" 
-            minlength="3" 
-            maxlength="120"
             required
+            minlength="3"
+            maxlength="120"
             name="endereco"
             ngModel
-            required
           >
           <small class="form-text text-danger">Endereço inválido</small>
         </div>
@@ -86,12 +92,12 @@
         <div class="form-group col-md-2">
           <input 
             type="text" 
-            class="form-control is-valid" 
+            class="form-control" 
             placeholder="Número" 
             autocomplete="off" 
+            required
             minlength="1"
             maxlength="20"
-            required
             name="numero"
             ngModel
           >
@@ -119,7 +125,7 @@
           
         <div class="form-group col-md-3">
           <select 
-            class="form-control is-invalid"
+            class="form-control"
             name="formaPagamento"
             ngModel
             required
