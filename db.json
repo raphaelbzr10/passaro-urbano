@@ -185,13 +185,5 @@
       "descricao": "Estrada Maria das Graças, 12, Salvador - BA "
     }
   ],
-  "pedidos": [
-    {
-      "endereco": "rua teste",
-      "numero": "189",
-      "complemento": "teste",
-      "formaPagamento": "dinheiro",
-      "id": 1
-    }
-  ]
+  "pedidos": []
 }

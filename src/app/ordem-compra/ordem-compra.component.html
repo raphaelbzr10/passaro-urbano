@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="ordem-compra">
+  <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <!-- 
       ngForm -> Associa ao formulário
       ngModel -> Associa aos campos do formulário
@@ -66,9 +66,6 @@
       </div>
       <br />
 
-      <pre>Válido = {{formulario.valid | json}}</pre>
-      <pre>Inválido = {{formulario.invalid | json}}</pre>
-      <pre>{{formulario.value | json}}</pre>
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -151,5 +148,9 @@
         class="btn btn-primary btn-lg"
       >Cofirmar compra</button>
     </form>
+  </div>
+
+  <div class="ordem-compra" *ngIf="idPedidoCompra !== undefined">
+    <app-ordem-compra-sucesso [idPedidoCompra]="idPedidoCompra"></app-ordem-compra-sucesso>
   </div>
 </div>
