@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
-import CarrinhoService from 'app/carrinho.service';
+import { CarrinhoService } from 'app/carrinho.service';
 import { OfertasService } from '../ofertas.services'
 import { Oferta } from '../shared/oferta.model'
 
@@ -9,7 +9,7 @@ import { Oferta } from '../shared/oferta.model'
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [ OfertasService, CarrinhoService ]
+  providers: [ OfertasService ]
 })
 export class OfertaComponent implements OnInit, OnDestroy {
  

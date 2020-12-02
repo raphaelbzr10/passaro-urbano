@@ -18,8 +18,9 @@ class CarrinhoService {
             1
         )
 
-        console.log(itemCarrinho);
+        this.itens.push(itemCarrinho);
+        console.log(this.itens);
     }
 }
 
-export default CarrinhoService;
+export { CarrinhoService };
