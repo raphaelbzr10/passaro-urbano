@@ -18,7 +18,13 @@ class CarrinhoService {
             1
         )
 
-        this.itens.push(itemCarrinho);
+        let itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
+
+        if (itemCarrinhoEncontrado) {
+            itemCarrinhoEncontrado.quantidade += 1;
+        } else {
+            this.itens.push(itemCarrinho);
+        }
         console.log(this.itens);
     }
 }
